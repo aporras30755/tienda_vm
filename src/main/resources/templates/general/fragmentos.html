@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Fragmento #1: head de todas las páginas -->
+    <head th:fragment="head">
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Iconos de la página -->
+        <link rel="icon" type="image/png" sizes="16x16"
+              th:href="@{/fav/favicon-16x16.png}"/>
+        <link rel="icon" type="image/png" sizes="32x32"
+              th:href="@{/fav/favicon-32x32.png}"/>
+        <link rel="icon" type="image/png" sizes="96x96"
+              th:href="@{/fav/favicon-96x96.png}"/>
+        <link rel="icon" type="image/png" sizes="256x256"
+              th:href="@{/fav/favicon-256x256.png}"/>
+
+        <!-- Incorporar Bootstrap -->
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+              rel="stylesheet"/>
+
+        <!-- Incorporar Font Awesome -->
+        <link th:href="@{/webjars/font-awesome/css/all.css}"
+              rel="stylesheet"/>
+
+        <!-- Incorporar JavaScript -->
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/js/rutinas.js}"></script>
+    </head>
+
+    <body>
+
+        <!-- Fragmento #2: encabezado y menú -->
+        <header th:fragment="header" class="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" th:href="@{/}">
+                        TechShop
+                    </a>
+
+                    <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#menuPrincipal"
+                            aria-controls="menuPrincipal"
+                            aria-expanded="false"
+                            aria-label="Mostrar menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="menuPrincipal">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/categorias}">
+                                    Categorías
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/productos}">
+                                    Productos
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/consultas}">
+                                    Consultas
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                   href="#"
+                                   id="menuAdmin"
+                                   role="button"
+                                   data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                    Administración
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="menuAdmin">
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/usuarios}">
+                                            Usuarios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/seguridad}">
+                                            Seguridad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/roles}">
+                                            Roles
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/permisos}">
+                                            Permisos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/rutas}">
+                                            Rutas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" th:href="@{/constantes}">
+                                            Constantes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <span class="navbar-text">
+                            Idioma
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Fragmento #3: pie de página -->
+        <footer th:fragment="footer"
+                class="text-center text-white bg-info p-3 mt-4">
+            TechShop Derechos Reservados 2025 ©
+        </footer>
+
+    </body>
+</html>

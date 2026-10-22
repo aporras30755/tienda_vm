@@ -1,88 +1,21 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>TechShop</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-        }
+    <head th:replace="~{general/fragmentos :: head}"></head>
 
-        header {
-            background-color: #6666ff;
-            color: white;
-            padding: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <body>
 
-        header h1 {
-            margin: 0;
-        }
+        <header th:replace="~{general/fragmentos :: header}"></header>
 
-        nav a {
-            background-color: green;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin-left: 15px;
-            border-radius: 12px;
-            font-size: 20px;
-        }
+        <hr/>
+        
+        
+         <hr/>
 
-        main {
-    display: flex;
-    min-height: calc(100vh - 103px);
-}
+        <footer th:replace="~{general/fragmentos :: footer}"></footer>
 
-        aside {
-            background-color: #99ff99;
-            width: 20%;
-            padding: 12px;
-        }
-
-        aside h1 {
-            background-color: blue;
-            color: #a18eff;
-            text-align: center;
-        }
-
-        section {
-            background-color: #d98299;
-            flex: 1;
-            padding: 12px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>TechShop</h1>
-
-        <nav>
-            <a href="#">Mis Autos</a>
-            <a href="#">Multimedia</a>
-            <a href="#">iFrames</a>
-        </nav>
-    </header>
-
-    <main>
-        <aside>
-            <h1>TechShop</h1>
-            <p>Donde encuentra los mejores precios de la WEB</p>
-        </aside>
-
-        <section>
-            <h2>El producto del mes</h2>
-            <p>Impresora EcoTank</p>
-        </section>
-    </main>
-
-</body>
+    </body>
 </html>
