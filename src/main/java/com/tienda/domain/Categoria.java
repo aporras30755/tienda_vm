@@ -9,5 +9,9 @@ package com.tienda.domain;
  * @author adryp
  */
 public class Categoria {
+
+    public void setRutaImagen(String rutaImagen) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
