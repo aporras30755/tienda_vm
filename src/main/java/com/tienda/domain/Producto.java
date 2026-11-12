@@ -9,44 +9,48 @@ import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
-@Table(name="producto")
+@Table(name = "producto")
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="producto_id")
+    @Column(name = "producto_id")
     private Integer idProducto;
-    private Integer idCategoria;
 
-    @Column(unique=true, nullable=false, length=50)
+    @Column(unique = true, nullable = false, length = 50)
     @NotBlank
-    @Size(max=50)
+    @Size(max = 50)
     private String descripcion;
-    
-    @Column(columnDefinition="TEXT")
+
+    @Column(columnDefinition = "TEXT")
     private String detalle;
-    
-    @Column(precision=12, scale=2)
-    @NotNull
-    @DecimalMin(value="0.00", inclusive=true)
+
+    @Column(precision = 12, scale = 2)
+    @NotNull(message = "El precio no puede ser vacio")
+    @DecimalMin(value = "0.00", inclusive = true)
     private BigDecimal precio;
-    
-        @NotNull
-    @Min(value=0)
+
+    @NotNull
+    @Min(value = 0)
     private Integer existencias;
 
-    @Column(name="ruta_imagen", length=1024)
-    @Size(max=1024)
+    @Column(name = "ruta_imagen", length = 1024)
+    @Size(max = 1024)
     private String rutaImagen;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private boolean activo;
 
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
 }
